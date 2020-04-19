@@ -1,4 +1,3 @@
-
 #include <clientprefs>
 #include <sdktools>
 #include <shop>
@@ -22,11 +21,11 @@ CategoryId mvpCategory;
 
 public Plugin myinfo =
 {
-	name = "[CS:GO] Custom MVP Anthem",
-	author = "Kento",
+	name = "[SHOP] Custom MVP Anthem",
+	author = "Kento, TheBO$$",
 	version = "1.10",
-	description = "Custom MVP Anthem",
-	url = "https://github.com/rogeraabbccdd/csgo_mvp"
+	description = "Shop module for Custom MVP Anthem",
+	url = ""
 };
 
 public void OnPluginStart()
