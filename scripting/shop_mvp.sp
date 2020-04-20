@@ -116,6 +116,7 @@ public ShopAction OnEquipItem(int client, CategoryId category_id, const char[] c
 	if (isOn || elapsed)
 	{
 		SetClientCookie(client, mvp_cookie, "");
+		CPrintToChat(client, "%T", "No Selected", client);
 		Selected[client] = 0;
 		return Shop_UseOff;
 	}
@@ -124,6 +125,7 @@ public ShopAction OnEquipItem(int client, CategoryId category_id, const char[] c
 	Shop_GetItemById(item_id, buffer, sizeof(buffer));
 	SetClientCookie(client, mvp_cookie, buffer);
 	Selected[client] = FindMVPIDByName(buffer);
+	CPrintToChat(client, "%T", "Selected", client, buffer);
 	return Shop_UseOn;
 }
 
