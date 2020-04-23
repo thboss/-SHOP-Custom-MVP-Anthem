@@ -28,7 +28,7 @@ public Plugin myinfo =
 	author = "Kento, TheBO$$",
 	version = "1.10",
 	description = "Shop module for Custom MVP Anthem",
-	url = ""
+	url = "https://github.com/thboss/-SHOP-Custom-MVP-Anthem"
 };
 
 public void OnPluginStart()
@@ -61,8 +61,7 @@ public void Shop_Started()
 {
 	mvpCategory = Shop_RegisterCategory("mvp", "MVP", "");
 	BuildPath(Path_SM, Configfile, sizeof(Configfile), "configs/shop/mvp.cfg");
-	char file[PLATFORM_MAX_PATH];
-	char item[64], item_name[64];
+	char file[PLATFORM_MAX_PATH], item[64];
 	MVPCount = 1;
 	
 	if(kv != INVALID_HANDLE) delete kv;
@@ -84,8 +83,7 @@ public void Shop_Started()
 			
 			if(Shop_StartItem(mvpCategory, item))
 			{
-				kv.GetString("name", item_name, sizeof(item_name), item);
-				Shop_SetInfo(item_name, "", KvGetNum(kv, "price", 100), KvGetNum(kv, "sellprice",KvGetNum(kv, "price")/2), Item_Togglable, KvGetNum(kv, "duration", 0));
+				Shop_SetInfo(item, "", KvGetNum(kv, "price", 100), KvGetNum(kv, "sellprice",KvGetNum(kv, "price")/2), Item_Togglable, KvGetNum(kv, "duration", 0));
 				Shop_SetLuckChance(KvGetNum(kv, "luckchance", 20));
 				Shop_SetCallbacks(_, OnEquipItem);
 				Shop_EndItem();
